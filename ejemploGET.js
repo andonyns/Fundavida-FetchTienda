@@ -16,6 +16,13 @@ async function ejecutandoGet() {
   }
 
   function armarResultado(resultado) {
+    /*
+      Resultado
+      <ul>
+        <li>1: Prueba. Direccion: San Jose</li>
+      </ul>
+    */
+    
     var resultadoHTML = "";
     resultadoHTML += "<ul>";
 
