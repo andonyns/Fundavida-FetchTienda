@@ -23,7 +23,9 @@ async function ejecutandoGet() {
         var resultados = resultado[i];
         
         resultadoHTML = resultadoHTML + "<li>";
-        resultadoHTML = resultadoHTML + resultados.nombre + ". Dirección: " + resultados.ubicacion;
+        resultadoHTML = resultadoHTML + resultados.id + ": " + resultados.nombre + ". Dirección: " + resultados.ubicacion;
+        //"<button onclick='borrarTienda(5)'>Borrar Tienda</button>"
+        resultadoHTML = resultadoHTML + "<button onclick='borrarTienda(" + resultados.id + ")'>Borrar Tienda</button>";
         resultadoHTML = resultadoHTML + "</li>";
     }
 
