@@ -1,51 +1,20 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+    <script src="ejemploGET.js"></script>
+</head>
+<body>
+    <h1>Lista de Tiendas</h1>
+    <div>
+    </div>
+</body>
 
-  <body>
-    <h1>Tiendas</h1>
-    <ul>
-    </ul>
-
-  </body>
-  <script>
-
-    async function ejecutandoGet() {
-      var requestOptions = {
-        method: 'GET',
-        credentials: 'same-origin',
-        redirect: 'follow'
-      };
-
-      var result = await fetch("http://localhost:5000/tiendas", requestOptions)
-        .then(response => response.json())
-        .then(result => {
-          console.log(result)
-          var list = document.createElement('ul');
-
-          for (var i = 0; i < result.length; i++) {
-              var resultados = result[i];
-              
-              var valor = document.createElement('li');
-              valor.innerHTML = resultados.nombre + ". Dirección: " + resultados.ubicacion;
-              list.appendChild(valor);
-          }
-
-          document.querySelector('ul').appendChild(list);
-        })
-         .catch(error => {
-            alert('Ocurrió un error: '+ error);
-          });
-        
-    }
-
-    ejecutandoGet();
-
-  </script>
-  <style>
-    li {
-      font-size: 20px;
-    }
-  </style>
+<!-- <script>
+    alert("Hola desde js");
+</script> -->
 </html>
